@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StarSystem : MonoBehaviour
 {
@@ -50,6 +51,8 @@ public class StarSystem : MonoBehaviour
             {
                 starImage.sprite = inactiveStarSprite;
             }
+            if (totalStars == 0){
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
-}
