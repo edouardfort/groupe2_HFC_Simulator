@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Montserrat_Thin
   m_EditorClassIdentifier: 
-  hashCode: 466766977
+  hashCode: 785614719
   material: {fileID: -5484993353074197156}
-  materialHashCode: -159765887
+  materialHashCode: 1478583935
   m_Version: 1.1.0
   m_SourceFontFileGUID: fb7eddd5e9e0d4296887bf9d34ba6976
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: fb7eddd5e9e0d4296887bf9d34ba6976, type: 3}
