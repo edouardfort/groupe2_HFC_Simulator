@@ -26,7 +26,7 @@ public class StarSystem : MonoBehaviour
     }
     public void GainStar()
     {
-        if (totalStars < 5)
+        if (totalStars < 5){
             totalStars++;
             UpdateStarDisplay();
         }
@@ -56,3 +56,4 @@ public class StarSystem : MonoBehaviour
             }
         }
     }
+}
