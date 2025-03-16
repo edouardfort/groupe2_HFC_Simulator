@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {   
+
+	
 	//Vitesse en marchant et en courant
     [SerializeField] private float walk, run;
 
@@ -29,10 +31,13 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CharacterController>();
 		audio_steps = GetComponent<AudioSource>();
         cc.enabled = true;
-		
+
+		Cursor.lockState = CursorLockMode.Locked; 
+		Cursor.visible = false; 
 		//Rend le curseur invisible
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+		Debug.Log("Cursor State: " + Cursor.lockState);
+
+
     }
     private void Update()
     {
@@ -50,8 +55,14 @@ public class PlayerController : MonoBehaviour
 			else if (Y > MAX_Y)
 				Y = MAX_Y;
 			*/
-			
+			Cursor.lockState = CursorLockMode.Confined;
+			// je voulais ajouter un truc pour que le curseur bouge pas mais ça marche pas ça me gonfle
+
+
 			X += Input.GetAxis("Mouse X") * (sensitivity * Time.deltaTime);
+
+			Y -= Input.GetAxis("Mouse Y") * (sensitivity * Time.deltaTime);
+			Y = Mathf.Clamp(Y, -60f, 70f); // Empêche de regarder trop haut ou bas
 
 			transform.localRotation = Quaternion.Euler(Y, X, 0.0f);
 
@@ -64,6 +75,18 @@ public class PlayerController : MonoBehaviour
 			
 			//Si on appuie sur Shift Gauche, on court
 			if (Input.GetKey(KeyCode.LeftShift))
+			{
+				speed = run;
+				isRunning = true;
+			}
+			else
+			{
+				isRunning = false;
+				speed = walk;
+			}
+
+						//Si on appuie sur Shift Droit, on court
+			if (Input.GetKey(KeyCode.RightShift))
 			{
 				speed = run;
 				isRunning = true;
