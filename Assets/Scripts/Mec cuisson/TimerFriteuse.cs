@@ -6,7 +6,7 @@ using TMPro;
 public class TimerFriteuse : MonoBehaviour
 {
     public TextMeshPro timerText; // Référence au texte 3D
-    public float tempsDeCuisson = 20f; // Temps en secondes
+    public float tempsDeCuisson; //= 20f; // Temps en secondes, je l'ai mit en commentaire psk ça changeait rien du tout
     private float tempsRestant;
     private bool enCuisson = false;
 
@@ -21,21 +21,21 @@ public class TimerFriteuse : MonoBehaviour
         {
             if (tempsRestant > 0)
             {
-                tempsRestant -= Time.deltaTime;
+                tempsRestant -= Time.deltaTime; //Time.deltaTime c'est une commande qui fait un compte a rebours je crois, donc en faites on soustrait une variable temps avec du temps qui passe, si j'ai bien capté.
                 UpdateTimer();
             }
             else
             {
                 enCuisson = false;
                 timerText.gameObject.SetActive(false); // Cache le timer à la fin
-                Debug.Log("Les frites sont prêtes !");
+                Debug.Log("Les frites sont prêtes !"); //Verif, changer cette ligne avec une phrase pour dire que c'est cuit ==> prochain mvp faire un temps pour voir si ils vont cramés ou pas.
             }
         }
     }
 
     void UpdateTimer()
     {
-        int secondes = Mathf.FloorToInt(tempsRestant);
+        int secondes = Mathf.FloorToInt(tempsRestant); //Mathf.FloorToInt == Renvoie le plus grand entier inférieur ou égal à f
         timerText.text = secondes.ToString(); // Affiche juste les secondes
     }
 
