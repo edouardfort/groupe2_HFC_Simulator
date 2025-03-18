@@ -6,7 +6,7 @@ using TMPro;
 public class TimerFriteuse : MonoBehaviour
 {
     public TextMeshPro timerText; // Référence au texte 3D
-    public float tempsDeCuisson = 10f; // Temps en secondes
+    public float tempsDeCuisson = 20f; // Temps en secondes
     private float tempsRestant;
     private bool enCuisson = false;
 
