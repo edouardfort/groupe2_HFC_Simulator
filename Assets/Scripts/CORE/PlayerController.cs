@@ -55,8 +55,25 @@ public class PlayerController : MonoBehaviour
 			else if (Y > MAX_Y)
 				Y = MAX_Y;
 			*/
-			Cursor.lockState = CursorLockMode.Confined;
+			// Cursor.lockState = CursorLockMode.Confined; //CT LE TRUC D'EDOUARD AU CAS OÙ FAUDRAIT LE RECUP
 			// je voulais ajouter un truc pour que le curseur bouge pas mais ça marche pas ça me gonfle
+
+
+			//C un code qui permet de lock le curseur au milieu et qui le fait disparaitre, on peut appuyer sur echap pour avoir de nouveau le curseur
+			void OnGUI()
+			{
+				//Press this button to lock the Cursor
+				if (GUI.Button(new Rect(0, 0, 100, 50), "Lock Cursor"))
+				{
+					Cursor.lockState = CursorLockMode.Locked;
+				}
+
+				//Press this button to confine the Cursor within the screen
+				if (GUI.Button(new Rect(125, 0, 100, 50), "Confine Cursor"))
+				{
+					Cursor.lockState = CursorLockMode.Confined;
+				}
+			}
 
 
 			X += Input.GetAxis("Mouse X") * (sensitivity * Time.deltaTime);
