@@ -50,7 +50,7 @@ public class TimerFriteuse : MonoBehaviour
             enCuisson = true;
             tempsRestant = tempsDeCuisson;
             timerText.gameObject.SetActive(true); // Affiche le timer
-            messafterfinish.gameObject.SetActive(false); // Cache le mess pendant le cuisson
+            messafterfinish.gameObject.SetActive(false); // Cache le mess pendant la cuisson
         }
     }
 }
