@@ -679,7 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 874477716}
-  tempsDeCuisson: 10
+  tempsDeCuisson: 15
 --- !u!1 &1033912250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5962398747546707978, guid: 3a3c0bbe58beeff4a8d63acd5a770137, type: 3}
