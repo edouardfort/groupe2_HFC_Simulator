@@ -5,21 +5,31 @@ using TMPro;
 
 public class Argent : MonoBehaviour
 {
+    public static Argent instance = null;
+    private ComportementClient comportementClient;
     public TextMeshProUGUI argentText;
     public int argent = 0;
+    void Awake(){
+		if(instance == null){
+			instance = this;
+		}
+	}
     void Start(){
         updateArgent();
     }
-    void gagnerArgent()
+    public void gagnerArgent(int money)
     {
-        argent = argent + 50;
+        comportementClient = ComportementClient.instance;
+        argent = argent + money;
+        comportementClient.AvancerFile();
         updateArgent();
     }
 
     void updateArgent(){
         argentText.text = string.Format("{0}$", argent);
+
     }
     void Update(){
-        gagnerArgent();
+      
     }
 }
