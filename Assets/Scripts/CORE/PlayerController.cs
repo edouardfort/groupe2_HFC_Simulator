@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 			cc.SimpleMove((forward + right) * speed);
 			
 			//Si on appuie sur Shift Gauche, on court
-			if (Input.GetKey(KeyCode.LeftShift))
+			if (Input.GetKey(KeyCode.LeftShift) || (Input.GetKey(KeyCode.RightShift)))
 			{
 				speed = run;
 				isRunning = true;
@@ -85,17 +85,6 @@ public class PlayerController : MonoBehaviour
 				speed = walk;
 			}
 
-						//Si on appuie sur Shift Droit, on court
-			if (Input.GetKey(KeyCode.RightShift))
-			{
-				speed = run;
-				isRunning = true;
-			}
-			else
-			{
-				isRunning = false;
-				speed = walk;
-			}
 			
 			if(horizontal != 0 || vertical != 0){ //Si le joueur se déplace, on joue des bruits de pas
 				if(step_timer <= 0){
