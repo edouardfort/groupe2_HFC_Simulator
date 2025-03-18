@@ -93,13 +93,13 @@ public class PlayerController : MonoBehaviour
 			//Si on appuie sur Shift Gauche, on court
 			if (Input.GetKey(KeyCode.LeftShift) || (Input.GetKey(KeyCode.RightShift)))
 			{
-				speed = run;
+				speed = run+3;
 				isRunning = true;
 			}
 			else
 			{
 				isRunning = false;
-				speed = walk;
+				speed = walk+2;
 			}
 
 			
