@@ -30,6 +30,7 @@ public class TimerFriteuse : MonoBehaviour
                 timerText.gameObject.SetActive(false); // Cache le timer à la fin
                 Debug.Log("Les frites sont prêtes !"); //Verif, changer cette ligne avec une phrase pour dire que c'est cuit ==> prochain mvp faire un temps pour voir si ils vont cramés ou pas.
             }
+
         }
     }
 
