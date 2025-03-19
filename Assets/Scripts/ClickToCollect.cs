@@ -1,10 +1,10 @@
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using UnityEngine;
-using TMPro; 
+using TMPro;
 
 public class ClickToCollect : MonoBehaviour
 {
-    
+
     public TextMeshProUGUI itemNameText;
 
     private List<string> collectedItems = new List<string>();
@@ -27,9 +27,12 @@ public class ClickToCollect : MonoBehaviour
 
     void Update()
     {
-        if (itemNameText.text=="Aucun objet collecté"){
+        if (itemNameText.text == "Aucun objet collecté")
+        {
             Sac.SetActive(false);
-        } else {
+        }
+        else
+        {
             Sac.SetActive(true);
         }
         // Vérifie si l'utilisateur clique avec le bouton gauche de la souris
@@ -43,7 +46,7 @@ public class ClickToCollect : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // Vérifie si l'objet touché a le tag "Clickable"
-                if (hit.collider.CompareTag("Clickable"))
+                if (hit.collider.CompareTag("Clickable") && collectedItems.Count < 2)
                 {
                     // Récupère le nom de l'objet collecté
                     string itemName = hit.collider.gameObject.name;
@@ -53,9 +56,30 @@ public class ClickToCollect : MonoBehaviour
 
                     // Met à jour le texte du HUD pour afficher la liste complète des objets collectés
                     UpdateHUD();
-                    
+
                     // Désactive l'objet collecté pour simuler sa disparition
                     hit.collider.gameObject.SetActive(false);
+                }
+                if (hit.collider.CompareTag("Client"))
+                {
+                    ComportementClient clientScript = hit.collider.GetComponent<ComportementClient>();
+
+                    if (clientScript != null)
+                    {
+                        for (int i = 0; i < collectedItems.Count; i++)
+                        {
+                            collectedItems[i] = collectedItems[i].ToLower();
+                        }
+                        clientScript.OnRaycastHit(collectedItems);
+                    }
+                }
+                if (hit.collider.CompareTag("Poubelle"))
+                {
+                    for (int i = collectedItems.Count - 1; i >= 0; i--)
+                    {
+                        collectedItems.RemoveAt(i);
+                    }
+                    UpdateHUD();
                 }
             }
         }
@@ -64,13 +88,20 @@ public class ClickToCollect : MonoBehaviour
     // Méthode pour mettre à jour le texte du HUD avec la liste des objets collectés
     private void UpdateHUD()
     {
-        // Construit une chaîne de caractères avec tous les objets collectés
-        itemNameText.text = "Objets collectés:\n";
-
-        // Parcours chaque objet dans la liste et ajoute son nom au texte du HUD
-        foreach (string item in collectedItems)
+        if (collectedItems.Count > 0)
         {
-            itemNameText.text += item + "\n";
+            // Construit une chaîne de caractères avec tous les objets collectés
+            itemNameText.text = "Objets collectés:\n";
+
+            // Parcours chaque objet dans la liste et ajoute son nom au texte du HUD
+            foreach (string item in collectedItems)
+            {
+                itemNameText.text += item + "\n";
+            }
+        }
+        else
+        {
+            itemNameText.text = defaultText;
         }
     }
 }

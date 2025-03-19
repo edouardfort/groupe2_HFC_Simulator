@@ -30,6 +30,7 @@ public class ApparitionClient : MonoBehaviour
         Client.transform.SetParent(parentObject);
         SpriteRenderer spriterenderer = Client.AddComponent<SpriteRenderer>();
         spriterenderer.sprite = clientSprites[Random.Range(0, clientSprites.Length)];
+        Client.AddComponent<BoxCollider>();
 
         //Association des scripts au client
         string ScriptName = "ComportementClient";

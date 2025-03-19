@@ -11,7 +11,7 @@ public class Produits : MonoBehaviour
 			instance = this;
 		}
 	}
-    public List<string> produits = new List<string> { "burger", "frites", "tacos" };
+    public List<string> produits = new List<string> { "Burger", "Frites", "Tacos" };
     public List<float> prix = new List<float> { 7.50f, 3.5f, 7f };
     public List<Sprite> sprites = new List<Sprite>();
 

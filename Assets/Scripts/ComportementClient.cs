@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class ComportementClient : MonoBehaviour
     private GameObject[] liste;
 
     public float offset;
+    int compteur = 0;
 
     public bool etatcommande = false;
 
@@ -41,7 +43,6 @@ public class ComportementClient : MonoBehaviour
     void Update()
     {
         float speed = 1f;
-
         if (etatcommande == false)
         {
             GameObject[] clients = GameObject.FindGameObjectsWithTag("Client");
@@ -59,7 +60,42 @@ public class ComportementClient : MonoBehaviour
             AfficherMenu();
             menuaffiche = true;
         }
+        if (compteur == 2)
+        {
+            etatcommande = true;
+        }
     }
+    public void OnRaycastHit(List<string> collectedItems)
+    {
+        if (menuaffiche == true)
+        {
+            List<string> produitsac = new List<string>(collectedItems);
+
+            compteur = 0;
+
+            // Vérifier les produits collectés qui ne sont pas choisis par le client
+            foreach (string produitCollecte in produitsac)
+            {
+                // Si le produit collecté n'est pas dans les produits choisis par le client
+                if (!Array.Exists(produitsChoix, item => item.Equals(produitCollecte, System.StringComparison.OrdinalIgnoreCase)))
+                {
+                    Debug.Log("Je ne veux pas de " + produitCollecte);
+                }
+            }
+            foreach (string produitChoisi in produitsChoix)
+            {
+                // Si le produit collecté correspond à un produit choisi
+                if (produitsac.Exists(item => item.Equals(produitChoisi, System.StringComparison.OrdinalIgnoreCase)))
+                {
+                    produitsac.Remove(produitChoisi);
+                    compteur = compteur + 1;
+                }
+            }
+
+
+        }
+    }
+
 
     void AfficherMenu()
     {
@@ -77,7 +113,7 @@ public class ComportementClient : MonoBehaviour
 
             SpriteRenderer produitRenderer = produitImage.AddComponent<SpriteRenderer>();
             produitRenderer.sprite = Resources.Load<Sprite>("Sprites/Produits/" + produitsChoix[i]);
-            produitImage.transform.localScale= new Vector3(1.2f,1.2f,1.2f);
+            produitImage.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             if (i == 0)
             {
                 produitImage.transform.localPosition = new Vector3(-4f, 1f, -1.5f);
@@ -99,7 +135,7 @@ public class ComportementClient : MonoBehaviour
         // Choisir deux produits aléatoires
         for (int i = 0; i < 2; i++)
         {
-            int j = Random.Range(0, produitsDispo.Count);  // Choisir un index aléatoire dans la liste
+            int j = UnityEngine.Random.Range(0, produitsDispo.Count);  // Utiliser UnityEngine.Random.Range pour éviter la confusion
             produitsChoix[i] = produitsDispo[j];  // Stocker le produit choisi
             prixprod += prixDispo[j];  // Ajouter le prix du produit choisi à la somme totale
         }
