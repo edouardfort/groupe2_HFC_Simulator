@@ -38,12 +38,6 @@ public class TimerFriteuse : MonoBehaviour
                 pret = true; // 🔥 Active l'état prêt
             }
         }
-                // Vérifie si le burger est désactivé après la collecte
-                if (!nourriture.activeSelf)  // Si le burger est désactivé
-                {
-                    messafterfinish.gameObject.SetActive(false);  // Cache le texte "Prêt"
-                }
-
     }
 
     void UpdateTimer()
