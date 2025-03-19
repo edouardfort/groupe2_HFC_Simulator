@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ClicFriteuse : MonoBehaviour
 {
-    
-    public TimerFriteuse timerFriteuse;
+    public TimerFriteuse timerFriteuse;  // Référence au script TimerFriteuse
 
     void OnMouseDown() // Détection du clic sur l'objet
     {
-        timerFriteuse.ActiverFriteuse();
-        Debug.Log("Test");
+        // Vérifie si le GameObject nourriture est désactivé
+        if (!timerFriteuse.nourriture.activeSelf)  // On accède à la variable nourriture du script TimerFriteuse
+        {
+            timerFriteuse.ActiverFriteuse();  // Si le burger est désactivé, on active le timer
+        }
     }
-
-    
 }
-
