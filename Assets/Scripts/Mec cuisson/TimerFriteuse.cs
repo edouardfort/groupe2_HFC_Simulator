@@ -11,7 +11,6 @@ public class TimerFriteuse : MonoBehaviour
     public float tempsDeCuisson; 
     private float tempsRestant;
     private bool enCuisson = false;
-    // private bool pret = false; 
 
     void Start()
     {
@@ -35,7 +34,6 @@ public class TimerFriteuse : MonoBehaviour
                 timerText.gameObject.SetActive(false);
                 messafterfinish.gameObject.SetActive(true); 
                 nourriture.gameObject.SetActive(true);
-                // pret = true; 
             }
         }
     }
@@ -56,9 +54,4 @@ public class TimerFriteuse : MonoBehaviour
             messafterfinish.gameObject.SetActive(false);
         }
     }
-
-    // public void ConfirmerPret() 
-    // {
-    //     pret = false;
-    // }
 }
