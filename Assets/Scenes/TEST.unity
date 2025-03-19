@@ -4190,6 +4190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 439759599}
   messafterfinish: {fileID: 366103979}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &439759599
 MonoBehaviour:
@@ -4899,6 +4900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 515419108}
   messafterfinish: {fileID: 1171933820}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &515419108
 MonoBehaviour:
@@ -5223,6 +5225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 527747321}
   messafterfinish: {fileID: 1130325079}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &527747321
 MonoBehaviour:
@@ -6655,6 +6658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 613888748}
   messafterfinish: {fileID: 2082660190}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &613888748
 MonoBehaviour:
@@ -6832,6 +6836,10 @@ PrefabInstance:
     - target: {fileID: 1401754464448076, guid: 6b5e9772e973b514993c495d4471494c, type: 3}
       propertyPath: m_Name
       value: SOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401754464448076, guid: 6b5e9772e973b514993c495d4471494c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1441859764811046, guid: 6b5e9772e973b514993c495d4471494c, type: 3}
       propertyPath: m_Name
@@ -7327,6 +7335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 673412186}
   messafterfinish: {fileID: 1008359451}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &673412186
 MonoBehaviour:
@@ -9004,6 +9013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 799239635}
   messafterfinish: {fileID: 2067764766}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &799239635
 MonoBehaviour:
@@ -9713,7 +9723,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000010917563242, guid: 6e2574af69e1ddd4497a11adb45777a1, type: 3}
       propertyPath: m_Name
-      value: Chicken (1)
+      value: Chicken
       objectReference: {fileID: 0}
     - target: {fileID: 1000010917563242, guid: 6e2574af69e1ddd4497a11adb45777a1, type: 3}
       propertyPath: m_TagString
@@ -14252,6 +14262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1185609520}
   messafterfinish: {fileID: 391259060}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &1185609520
 MonoBehaviour:
@@ -17140,6 +17151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1541666681}
   messafterfinish: {fileID: 803260449}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &1541666681
 MonoBehaviour:
@@ -17730,6 +17742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1586162965}
   messafterfinish: {fileID: 991450348}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 3
 --- !u!114 &1586162965
 MonoBehaviour:
@@ -21074,6 +21087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 2026493021}
   messafterfinish: {fileID: 873978726}
+  nourriture: {fileID: 0}
   tempsDeCuisson: 15
 --- !u!114 &2026493021
 MonoBehaviour:
