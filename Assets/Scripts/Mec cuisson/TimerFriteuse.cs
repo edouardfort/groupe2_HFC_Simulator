@@ -7,6 +7,7 @@ public class TimerFriteuse : MonoBehaviour
 {
     public TextMeshPro timerText; // Référence au texte 3D
     public TextMeshPro messafterfinish; // Texte 3D après le décompte
+    public GameObject nourriture;
     public float tempsDeCuisson; //= 20f; // Temps en secondes, je l'ai mit en commentaire psk ça changeait rien du tout
     private float tempsRestant;
     private bool enCuisson = false;
@@ -15,6 +16,7 @@ public class TimerFriteuse : MonoBehaviour
     {
         timerText.gameObject.SetActive(false); // Cache le timer au début
         messafterfinish.gameObject.SetActive(false); // Cache le texte au début
+        nourriture.SetActive(false); //Cache l'objet
     }
 
     void Update()
@@ -32,6 +34,7 @@ public class TimerFriteuse : MonoBehaviour
                 timerText.gameObject.SetActive(false); // Cache le timer à la fin
                 Debug.Log("Les frites sont prêtes !"); //Verif, changer cette ligne avec une phrase pour dire que c'est cuit ==> prochain mvp faire un temps pour voir si ils vont cramés ou pas.
                 messafterfinish.gameObject.SetActive(true); // Montre le message prêt
+                nourriture.gameObject.SetActive(true); //fait apparaitre le burger
             }
 
         }
