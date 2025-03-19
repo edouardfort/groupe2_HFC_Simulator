@@ -7,16 +7,18 @@ public class LookAt : MonoBehaviour
 	private Transform player;
 	private Vector3 lastPlayerPosition;
 	private float rotationSpeed = 5f; // Ajustable
+	Vector3 lastPosition;
 		
 	void Start(){
 		player = GameObject.FindWithTag("Player").transform;
 		lastPlayerPosition = getPlayerPosition();
+		
 	}
 	
 	void Update(){
 		Vector3 targetPosition = getPlayerPosition();
 		Vector3 direction = targetPosition - transform.position;
-		if (direction != Vector3.zero && targetPosition != lastPlayerPosition) { 
+		if (direction != Vector3.zero && targetPosition != lastPlayerPosition || transform.position != lastPosition) { 
 			lastPlayerPosition = targetPosition;
 			//transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 			
