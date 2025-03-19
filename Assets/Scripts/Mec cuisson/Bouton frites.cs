@@ -15,5 +15,3 @@ public class ClicFriteuse : MonoBehaviour
         }
     }
 }
-
-
