@@ -1,25 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using UnityEngine;
 using TMPro; 
 
 public class ClickToCollect : MonoBehaviour
 {
+    
     public TextMeshProUGUI itemNameText;
 
-    private string defaultText = "Aucun objet";
+    private List<string> collectedItems = new List<string>();
 
+    private string defaultText = "Aucun objet collecté";
 
     void Start()
     {
-        // S'assurer que le texte par défaut est affiché au démarrage du jeu
         if (itemNameText != null)
         {
             itemNameText.text = defaultText;
         }
         else
         {
-            // Si la référence à itemNameText n'est pas assignée dans l'Inspector, afficher un message d'erreur
             Debug.LogError("Le champ itemNameText n'est pas assigné dans l'Inspector !");
         }
     }
@@ -42,13 +41,29 @@ public class ClickToCollect : MonoBehaviour
                     // Récupère le nom de l'objet collecté
                     string itemName = hit.collider.gameObject.name;
 
-                    // Affiche le nom de l'objet dans le HUD
-                    itemNameText.text = itemName;
+                    // Ajoute le nom de l'objet à la liste des objets collectés
+                    collectedItems.Add(itemName);
 
+                    // Met à jour le texte du HUD pour afficher la liste complète des objets collectés
+                    UpdateHUD();
+                    
                     // Désactive l'objet collecté pour simuler sa disparition
                     hit.collider.gameObject.SetActive(false);
                 }
             }
+        }
+    }
+
+    // Méthode pour mettre à jour le texte du HUD avec la liste des objets collectés
+    private void UpdateHUD()
+    {
+        // Construit une chaîne de caractères avec tous les objets collectés
+        itemNameText.text = "Objets collectés:\n";
+
+        // Parcours chaque objet dans la liste et ajoute son nom au texte du HUD
+        foreach (string item in collectedItems)
+        {
+            itemNameText.text += item + "\n";
         }
     }
 }
