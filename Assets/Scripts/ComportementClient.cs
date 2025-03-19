@@ -67,15 +67,32 @@ public class ComportementClient : MonoBehaviour
         Bulle.transform.SetParent(gameObject.transform);
         SpriteRenderer spriterenderer = Bulle.AddComponent<SpriteRenderer>();
         spriterenderer.sprite = Resources.Load<Sprite>("Sprites/Clients/Bulle");
-        Bulle.transform.localPosition  = new Vector3(-12.5f, 17.5f, 0.5f);
-        Bulle.transform.localScale = new Vector3(1,1,1);
+        Bulle.transform.localPosition = new Vector3(-12.5f, 17.5f, 0.5f);
+        Bulle.transform.localScale = new Vector3(1, 1, 1);
         Bulle.transform.rotation = Quaternion.Euler(0, 180, -18);
+        for (int i = 0; i < produitsChoix.Length; i++)
+        {
+            GameObject produitImage = new GameObject("Produit" + i);
+            produitImage.transform.SetParent(Bulle.transform);
+
+            SpriteRenderer produitRenderer = produitImage.AddComponent<SpriteRenderer>();
+            produitRenderer.sprite = Resources.Load<Sprite>("Sprites/Produits/" + produitsChoix[i]);
+            produitImage.transform.localScale= new Vector3(1.2f,1.2f,1.2f);
+            if (i == 0)
+            {
+                produitImage.transform.localPosition = new Vector3(-4f, 1f, -1.5f);
+            }
+            else if (i == 1)
+            {
+                produitImage.transform.localPosition = new Vector3(1.5f, 1.7f, -2.57f);
+            }
+        }
     }
 
     // Choisir les produits et calculer le prix
     void ChoixMenu()
     {
-        prixprod=0f;
+        prixprod = 0f;
         produitsDispo = Produits.instance.produits;  // Récupérer la liste des produits disponibles
         prixDispo = Produits.instance.prix;  // Récupérer la liste des prix
 
@@ -108,7 +125,7 @@ public class ComportementClient : MonoBehaviour
     // Processus de paiement du client
     void ClientPaying()
     {
-        money.gagnerArgent(prixprod);  // Gagner de l'argent (ici 50)
-        Destroy(gameObject);  // Supprimer le client après le paiement
+        money.gagnerArgent(prixprod);
+        Destroy(gameObject);
     }
 }
