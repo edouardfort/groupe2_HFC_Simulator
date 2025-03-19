@@ -11,6 +11,8 @@ public class ClickToCollect : MonoBehaviour
 
     private string defaultText = "Aucun objet collecté";
 
+    public GameObject Sac;
+
     void Start()
     {
         if (itemNameText != null)
@@ -25,6 +27,11 @@ public class ClickToCollect : MonoBehaviour
 
     void Update()
     {
+        if (itemNameText.text=="Aucun objet collecté"){
+            Sac.SetActive(false);
+        } else {
+            Sac.SetActive(true);
+        }
         // Vérifie si l'utilisateur clique avec le bouton gauche de la souris
         if (Input.GetMouseButtonDown(0))
         {
