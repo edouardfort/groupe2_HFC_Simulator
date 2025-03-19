@@ -31,13 +31,13 @@ public class ApparitionClient : MonoBehaviour
         SpriteRenderer spriterenderer = Client.AddComponent<SpriteRenderer>();
         spriterenderer.sprite = clientSprites[Random.Range(0, clientSprites.Length)];
 
+        //Association des scripts au client
         string ScriptName = "ComportementClient";
         System.Type MyScriptType = System.Type.GetType(ScriptName + ",Assembly-CSharp");
         Client.AddComponent(MyScriptType);
         ScriptName = "LookAt";
         MyScriptType = System.Type.GetType(ScriptName + ",Assembly-CSharp");
         Client.AddComponent(MyScriptType);
-
 
     }
 }

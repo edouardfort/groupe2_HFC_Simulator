@@ -8,7 +8,7 @@ public class Argent : MonoBehaviour
     public static Argent instance = null;
     private ComportementClient comportementClient;
     public TextMeshProUGUI argentText;
-    public int argent = 0;
+    public float argent = 0f;
     void Awake(){
 		if(instance == null){
 			instance = this;
@@ -17,7 +17,7 @@ public class Argent : MonoBehaviour
     void Start(){
         updateArgent();
     }
-    public void gagnerArgent(int money)
+    public void gagnerArgent(float money)
     {
         comportementClient = ComportementClient.instance;
         argent = argent + money;

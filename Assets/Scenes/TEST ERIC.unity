@@ -2059,6 +2059,62 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5e9772e973b514993c495d4471494c, type: 3}
+--- !u!1 &828109584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828109586}
+  - component: {fileID: 828109585}
+  m_Layer: 0
+  m_Name: listeproduit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &828109585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828109584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4ce92dc4b2ef9428cf44293a9275dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  produits:
+  - burger
+  - frites
+  - tacos
+  prix:
+  - 7.5
+  - 3.5
+  - 7
+  sprites:
+  - {fileID: 21300000, guid: c7c4b991004b1414c81ef85a7f57cd7e, type: 3}
+  - {fileID: 21300000, guid: 831eaa405c2eaf345bfc557fa17bdb1c, type: 3}
+  - {fileID: 21300000, guid: 20ba1eb94e5d6894bb1dca28e47a5889, type: 3}
+--- !u!4 &828109586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828109584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.585686, y: 3.0933409, z: 9.451363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910579027
 GameObject:
   m_ObjectHideFlags: 0
@@ -10953,3 +11009,4 @@ SceneRoots:
   - {fileID: 543450653486737762}
   - {fileID: 1838505816}
   - {fileID: 1627660530}
+  - {fileID: 828109586}
