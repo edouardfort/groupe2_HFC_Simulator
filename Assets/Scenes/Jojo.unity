@@ -2388,7 +2388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 1045284395}
-  timerFriteuse: {fileID: 0}
 --- !u!1001 &1565062602
 PrefabInstance:
   m_ObjectHideFlags: 0

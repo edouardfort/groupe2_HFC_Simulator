@@ -49,7 +49,7 @@ public class TimerFriteuse : MonoBehaviour
 
     public void ActiverFriteuse()
     {
-        if (!enCuisson && !pret) // 🔥 Empêche de relancer tant que l'objet n'est pas récupéré
+        if (!enCuisson) // 🔥 Empêche de relancer tant que l'objet n'est pas récupéré
         {
             enCuisson = true;
             tempsRestant = tempsDeCuisson;
