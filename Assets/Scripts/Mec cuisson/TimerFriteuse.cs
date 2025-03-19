@@ -33,7 +33,6 @@ public class TimerFriteuse : MonoBehaviour
             {
                 enCuisson = false;
                 timerText.gameObject.SetActive(false);
-                Debug.Log("Les frites sont prêtes !");
                 messafterfinish.gameObject.SetActive(true); 
                 nourriture.gameObject.SetActive(true);
                 pret = true; // 🔥 Active l'état prêt
@@ -49,7 +48,7 @@ public class TimerFriteuse : MonoBehaviour
 
     public void ActiverFriteuse()
     {
-        if (!enCuisson) // 🔥 Empêche de relancer tant que l'objet n'est pas récupéré
+        if (!enCuisson) //  Empêche de relancer tant que l'objet n'est pas récupéré
         {
             enCuisson = true;
             tempsRestant = tempsDeCuisson;
@@ -58,7 +57,7 @@ public class TimerFriteuse : MonoBehaviour
         }
     }
 
-    public void ConfirmerPret() // 🔥 Nouvelle méthode pour réinitialiser l'état
+    public void ConfirmerPret() // Nouvelle méthode pour réinitialiser l'état
     {
         pret = false;
     }
