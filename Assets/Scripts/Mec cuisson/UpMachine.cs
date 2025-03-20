@@ -10,7 +10,7 @@ public class UpMachine : MonoBehaviour
     {
         if (Argent.instance.argent >= 5 && timerFriteuse.nivmachine < 3)  // On récup la variable argent et on vérifie si elle a la tune nécessaire
         {
-            Argent.instance.argent -= 5; // Retire 20 d'argent
+            Argent.instance.gagnerArgent(-5); // Retire 20 d'argent
             timerFriteuse.AmeliorerMachine();  // Améliore la machine
         } else
         {
