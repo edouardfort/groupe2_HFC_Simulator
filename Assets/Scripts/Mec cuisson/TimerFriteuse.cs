@@ -11,12 +11,14 @@ public class TimerFriteuse : MonoBehaviour
     public float tempsDeCuisson; 
     private float tempsRestant;
     private bool enCuisson = false;
+    public int nivmachine;
 
     void Start()
     {
         timerText.gameObject.SetActive(false); 
         messafterfinish.gameObject.SetActive(false); 
         nourriture.SetActive(false); 
+        nivmachine = 0;
     }
 
     void Update()
@@ -49,7 +51,16 @@ public class TimerFriteuse : MonoBehaviour
         if (!enCuisson) //  Empêche de relancer tant que l'objet n'est pas récupéré
         {
             enCuisson = true;
-            tempsRestant = tempsDeCuisson;
+            // tempsRestant = tempsDeCuisson; // C'était le truc d'avant
+            if (nivmachine == 0){ // PARTIE QUI PERMET DE RÉDUIRE LE TEMPS DES MACHINES EN FONCTION DU NIVEAU MACHINE
+                tempsRestant = 10;
+            } else if (nivmachine == 1){
+                tempsRestant = 8;
+            } else if (nivmachine == 2){
+                tempsRestant = 6;
+            } else if (nivmachine == 3){
+                tempsRestant = 4;
+            }
             timerText.gameObject.SetActive(true);
             messafterfinish.gameObject.SetActive(false);
         } 
