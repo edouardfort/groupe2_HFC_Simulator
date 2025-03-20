@@ -4,6 +4,14 @@ using TMPro;
 
 public class ClickToCollect : MonoBehaviour
 {
+    public static ClickToCollect instance = null;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     public TextMeshProUGUI itemNameText;
 
@@ -75,18 +83,25 @@ public class ClickToCollect : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("Poubelle"))
                 {
-                    for (int i = collectedItems.Count - 1; i >= 0; i--)
-                    {
-                        collectedItems.RemoveAt(i);
-                    }
-                    UpdateHUD();
+                    DeleteInventory();
                 }
             }
         }
     }
 
+    public void DeleteInventory()
+    {
+        for (int i = collectedItems.Count - 1; i >= 0; i--)
+        {
+            collectedItems.RemoveAt(i);
+        }
+        UpdateHUD();
+
+    }
+
+
     // Méthode pour mettre à jour le texte du HUD avec la liste des objets collectés
-    private void UpdateHUD()
+    public void UpdateHUD()
     {
         if (collectedItems.Count > 0)
         {
