@@ -51,7 +51,7 @@ public class ClickToCollect : MonoBehaviour
             RaycastHit hit; // Variable pour stocker l'objet touché par le rayon
 
             // Effectue un Raycast pour vérifier si quelque chose est touché par le rayon
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit,3f))
             {
                 // Vérifie si l'objet touché a le tag "Clickable"
                 if (hit.collider.CompareTag("Clickable") && collectedItems.Count < 2)

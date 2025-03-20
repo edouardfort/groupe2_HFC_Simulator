@@ -9,8 +9,6 @@ public class MainMenu : MonoBehaviour
 	[SerializeField] private GameObject panel_credits;
 	[SerializeField] private GameObject panel_droits;
 
-	// [SerializeField] private GameObject panel_credits;
-	// [SerializeField] private GameObject panel_droits;
 
 	void Start()
 	{
@@ -51,25 +49,6 @@ public class MainMenu : MonoBehaviour
 	{
 		panel_droits.SetActive(false);
 	}
-
-	// public void ShowCredits()
-	// {
-	// 	panel_credits.SetActive(true);
-	// }
-	// public void UnshowCredits()
-	// {
-	// 	panel_credits.SetActive(false);
-	// }
-
-	// public void ShowDroits()
-	// {
-	// 	panel_droits.SetActive(true);
-	// }
-
-	// public void UnshowDroits()
-	// {
-	// 	panel_droits.SetActive(false);
-	// }
 
 	public void QuitGame()
 	{
