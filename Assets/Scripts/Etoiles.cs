@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class StarSystem : MonoBehaviour
 {
+    public static StarSystem instance = null;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     public GameObject[] starObjects;
     public Sprite activeStarSprite;
     public Sprite inactiveStarSprite;
@@ -26,7 +34,8 @@ public class StarSystem : MonoBehaviour
     }
     public void GainStar()
     {
-        if (totalStars < 5){
+        if (totalStars < 5)
+        {
             totalStars++;
             UpdateStarDisplay();
         }
@@ -51,7 +60,8 @@ public class StarSystem : MonoBehaviour
             {
                 starImage.sprite = inactiveStarSprite;
             }
-            if (totalStars == 0){
+            if (totalStars == 0)
+            {
                 SceneManager.LoadScene("GameOver");
             }
         }

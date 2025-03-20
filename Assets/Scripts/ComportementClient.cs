@@ -13,10 +13,10 @@ public class ComportementClient : MonoBehaviour
             instance = this;
         }
     }
-
+    private ChronoClientPasContent chronoclient;
     private Argent money;
     private ClickToCollect cliquetocollect;
-
+    private StarSystem star;
     private List<string> produitsDispo;  // Liste des produits disponibles
     private List<float> prixDispo;  // Liste des prix des produits
     private string[] produitsChoix = new string[2];  // Produits choisis par le client
@@ -33,7 +33,9 @@ public class ComportementClient : MonoBehaviour
 
     void Start()
     {
+        chronoclient = ChronoClientPasContent.instance;
         cliquetocollect = ClickToCollect.instance;
+        star = StarSystem.instance;
         money = Argent.instance;
         target = GameObject.Find("Milieu");
         transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
@@ -61,6 +63,7 @@ public class ComportementClient : MonoBehaviour
         if (transform.position.z == -4.36f && menuaffiche == false)
         {
             AfficherMenu();
+            chronoclient.DemarrerChrono();
             menuaffiche = true;
         }
         if (compteur == 2)
@@ -163,8 +166,15 @@ public class ComportementClient : MonoBehaviour
     // Processus de paiement du client
     void ClientPaying()
     {
+        chronoclient.ResetTimer();
+        chronoclient.StopTimer();
         cliquetocollect.DeleteInventory();
         money.gagnerArgent(prixprod);
         Destroy(gameObject);
+    }
+    public void ClientPasContent(GameObject character)
+    {
+        star.LoseStar();
+        Destroy(character);
     }
 }
