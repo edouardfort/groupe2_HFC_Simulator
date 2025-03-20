@@ -4,11 +4,11 @@ using TMPro;
 public class Chrono : MonoBehaviour
 {
     public TextMeshProUGUI chronoText;
-    private float timeElapsed = 600f;
+    private float timeElapsed = 0f;
 
     void Update()
     {
-        timeElapsed = timeElapsed - Time.deltaTime;
+        timeElapsed = timeElapsed + Time.deltaTime;
         chronoText.text = FormatTime(timeElapsed);
     }
 
