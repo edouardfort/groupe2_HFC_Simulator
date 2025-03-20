@@ -23,12 +23,12 @@ public class TimerFriteuse : MonoBehaviour
     {
         if (enCuisson)
         {
-            if (tempsRestant > 0)
+            if (tempsRestant > 0) //Fait -1 au timer
             {
                 tempsRestant -= Time.deltaTime;
                 UpdateTimer();
             }
-            else
+            else //Arrivé à 0, le temps s'enlève et Prêt && Nourriture spawn
             {
                 enCuisson = false;
                 timerText.gameObject.SetActive(false);
@@ -52,6 +52,6 @@ public class TimerFriteuse : MonoBehaviour
             tempsRestant = tempsDeCuisson;
             timerText.gameObject.SetActive(true);
             messafterfinish.gameObject.SetActive(false);
-        }
+        } 
     }
 }
