@@ -1460,9 +1460,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1389096792}
+      - m_Target: {fileID: 1389096794}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: "UnshowCr\xE9dits"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2929,7 +2929,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1389096794}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ShowCredits
+        m_MethodName: "ShowCr\xE9dits"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3520,8 +3520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel_options: {fileID: 2100176248}
-  panel_credits: {fileID: 1077913842}
-  panel_droits: {fileID: 0}
+  panel_credits: {fileID: 506715384}
+  panel_droits: {fileID: 1077913842}
 --- !u!114 &1389096795
 MonoBehaviour:
   m_ObjectHideFlags: 0
