@@ -15,6 +15,8 @@ public class ComportementClient : MonoBehaviour
     }
 
     private Argent money;
+    private ClickToCollect cliquetocollect;
+
     private List<string> produitsDispo;  // Liste des produits disponibles
     private List<float> prixDispo;  // Liste des prix des produits
     private string[] produitsChoix = new string[2];  // Produits choisis par le client
@@ -91,8 +93,6 @@ public class ComportementClient : MonoBehaviour
                     compteur = compteur + 1;
                 }
             }
-
-
         }
     }
 
@@ -161,6 +161,8 @@ public class ComportementClient : MonoBehaviour
     // Processus de paiement du client
     void ClientPaying()
     {
+        cliquetocollect = ClickToCollect.instance;
+        cliquetocollect.DeleteInventory();
         money.gagnerArgent(prixprod);
         Destroy(gameObject);
     }
