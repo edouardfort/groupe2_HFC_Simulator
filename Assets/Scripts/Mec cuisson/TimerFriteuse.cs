@@ -12,6 +12,7 @@ public class TimerFriteuse : MonoBehaviour
     private float tempsRestant;
     private bool enCuisson = false;
     public int nivmachine;
+    // public GameObject UPMACHINE;
 
     void Start()
     {
@@ -64,5 +65,18 @@ public class TimerFriteuse : MonoBehaviour
             timerText.gameObject.SetActive(true);
             messafterfinish.gameObject.SetActive(false);
         } 
+    }
+
+    public void AmeliorerMachine()
+    {
+        if (nivmachine < 3)
+        {
+            nivmachine++;
+            Debug.Log("UpgradeMachine" + nivmachine);  
+        }
+        else 
+        {
+            Debug.Log("Niveau Max atteint");
+        }
     }
 }
