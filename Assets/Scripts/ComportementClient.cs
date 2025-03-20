@@ -136,7 +136,6 @@ public class ComportementClient : MonoBehaviour
         prixprod = 0f;
         produitsDispo = Produits.instance.produits;  // Récupérer la liste des produits disponibles
         prixDispo = Produits.instance.prix;  // Récupérer la liste des prix
-
         // Choisir deux produits aléatoires
         for (int i = 0; i < 2; i++)
         {
