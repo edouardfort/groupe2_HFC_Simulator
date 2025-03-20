@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject panel_options;
 	[SerializeField] private GameObject panel_credits;
+	[SerializeField] private GameObject panel_droits;
 	
 	void Start(){
 		UnshowOptions();
@@ -24,11 +25,19 @@ public class MainMenu : MonoBehaviour
 		panel_options.SetActive(false);
 	}
 
-		public void ShowCredits(){
+		public void ShowDroits(){
 		panel_credits.SetActive(true);
 	}
-		public void UnshowCredits(){
+		public void UnshowDroits(){
 		panel_credits.SetActive(false);
+	}
+
+	public void ShowCredits(){
+		panel_options.SetActive(true);
+	}
+	
+	public void UnshowCredits(){
+		panel_options.SetActive(false);
 	}
 	
 	public void QuitGame(){
