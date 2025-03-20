@@ -5,42 +5,51 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject panel_options;
+	[SerializeField] private GameObject panel_options;
 	[SerializeField] private GameObject panel_credits;
 	[SerializeField] private GameObject panel_droits;
-	
-	void Start(){
+
+	void Start()
+	{
 		UnshowOptions();
 	}
-	
-	public void PlayGame(){
+
+	public void PlayGame()
+	{
 		SceneManager.LoadScene("TEST");
 	}
-	
-	public void ShowOptions(){
+
+	public void ShowOptions()
+	{
 		panel_options.SetActive(true);
 	}
-	
-	public void UnshowOptions(){
+
+	public void UnshowOptions()
+	{
 		panel_options.SetActive(false);
 	}
 
-		public void ShowDroits(){
+	public void ShowDroits()
+	{
+		panel_droits.SetActive(true);
+	}
+	public void UnshowDroits()
+	{
+		panel_droits.SetActive(false);
+	}
+
+	public void ShowCredits()
+	{
 		panel_credits.SetActive(true);
 	}
-		public void UnshowDroits(){
+
+	public void UnshowCredits()
+	{
 		panel_credits.SetActive(false);
 	}
 
-	public void ShowCredits(){
-		panel_options.SetActive(true);
-	}
-	
-	public void UnshowCredits(){
-		panel_options.SetActive(false);
-	}
-	
-	public void QuitGame(){
+	public void QuitGame()
+	{
 		Application.Quit();
 	}
 }
