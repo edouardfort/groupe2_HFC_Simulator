@@ -15,15 +15,16 @@ public class ChronoClientPasContent : MonoBehaviour
     }
     private ComportementClient comportement;
     public TextMeshPro TextChrono;
-    private float timeElapsed = 30f;
+    public float TempsAttente = 45f;
 
+    private float timeElapsed;
     private bool etatchrono = false;
 
     GameObject[] clients;
 
     void Start()
     {
-
+        ResetTimer();
     }
 
     void Update()
@@ -64,6 +65,6 @@ public class ChronoClientPasContent : MonoBehaviour
 
     public void ResetTimer()
     {
-        timeElapsed = 30f;
+        timeElapsed = TempsAttente;
     }
 }
