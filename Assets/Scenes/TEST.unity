@@ -1009,6 +1009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 1137655111}
 --- !u!1001 &21924056
 PrefabInstance:
@@ -6127,6 +6130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 439759598}
 --- !u!1 &165582304
 GameObject:
@@ -7319,6 +7325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 799239634}
 --- !u!1 &204038988
 GameObject:
@@ -14865,6 +14874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 1541666680}
 --- !u!1 &406213919
 GameObject:
@@ -18437,6 +18449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 515419107}
 --- !u!1 &510230434
 GameObject:
@@ -20821,7 +20836,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20863,6 +20878,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 673412185}
 --- !u!4 &552674531 stripped
 Transform:
@@ -53420,6 +53438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 2026493020}
 --- !u!1 &1435609143
 GameObject:
@@ -62552,6 +62573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 1982773191}
 --- !u!1 &1709346037
 GameObject:
@@ -77394,6 +77418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2dfbfd092538c4cb680382c4fbfce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redMaterial: {fileID: 2100000, guid: 79dfdd5e60961d24898ad2ec23da04b1, type: 2}
+  grayMaterial: {fileID: 2100000, guid: ff5953d4e28b39947b3fa0f78341c371, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 90f0e955d9ad072488e7a6f157d968f9, type: 2}
   timerFriteuse: {fileID: 1185609519}
 --- !u!1 &2120604603
 GameObject:
