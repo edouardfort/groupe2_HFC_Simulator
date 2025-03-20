@@ -5,7 +5,7 @@ public class Chrono : MonoBehaviour
 {
     private ChronoClientPasContent ChronoClient;
     public TextMeshProUGUI chronoText;
-    private float timeElapsed = 600f;
+    private float timeElapsed = 0f;
 
     void Start(){
         ChronoClient = ChronoClientPasContent.instance;
