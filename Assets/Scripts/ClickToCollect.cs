@@ -101,7 +101,7 @@ public class ClickToCollect : MonoBehaviour
 
 
     // Méthode pour mettre à jour le texte du HUD avec la liste des objets collectés
-    private void UpdateHUD()
+    public void UpdateHUD()
     {
         if (collectedItems.Count > 0)
         {

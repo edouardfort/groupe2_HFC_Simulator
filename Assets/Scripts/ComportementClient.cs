@@ -33,6 +33,7 @@ public class ComportementClient : MonoBehaviour
 
     void Start()
     {
+        cliquetocollect = ClickToCollect.instance;
         money = Argent.instance;
         target = GameObject.Find("Milieu");
         transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
@@ -90,6 +91,7 @@ public class ComportementClient : MonoBehaviour
                 if (produitsac.Exists(item => item.Equals(produitChoisi, System.StringComparison.OrdinalIgnoreCase)))
                 {
                     produitsac.Remove(produitChoisi);
+                    cliquetocollect.UpdateHUD();
                     compteur = compteur + 1;
                 }
             }
@@ -161,7 +163,6 @@ public class ComportementClient : MonoBehaviour
     // Processus de paiement du client
     void ClientPaying()
     {
-        cliquetocollect = ClickToCollect.instance;
         cliquetocollect.DeleteInventory();
         money.gagnerArgent(prixprod);
         Destroy(gameObject);
