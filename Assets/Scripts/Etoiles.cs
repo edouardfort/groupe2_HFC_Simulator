@@ -63,6 +63,8 @@ public class StarSystem : MonoBehaviour
             if (totalStars == 0)
             {
                 SceneManager.LoadScene("GameOver");
+                Cursor.lockState = CursorLockMode.None; 
+                Cursor.visible = true; 
             }
         }
     }
