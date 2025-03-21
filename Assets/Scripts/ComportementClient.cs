@@ -119,6 +119,7 @@ public class ComportementClient : MonoBehaviour
             SpriteRenderer produitRenderer = produitImage.AddComponent<SpriteRenderer>();
             produitRenderer.sprite = Resources.Load<Sprite>("Sprites/Produits/" + produitsChoix[i]);
             produitImage.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+             produitImage.transform.rotation = Quaternion.Euler(0f, -180f, -8f);
             if (i == 0)
             {
                 produitImage.transform.localPosition = new Vector3(-4f, 1f, -1.5f);
