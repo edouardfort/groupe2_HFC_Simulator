@@ -16,7 +16,7 @@ public class ApparitionClient : MonoBehaviour
     void Update()
     {
         temps=temps+Time.deltaTime;
-        if (temps >= 2)
+        if (temps >= 15)
         {
             SpawnClient();
             temps=0f;

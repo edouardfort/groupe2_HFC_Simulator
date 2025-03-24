@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class TimerFriteuse : MonoBehaviour
 {
     public TextMeshPro timerText; 
@@ -12,6 +13,8 @@ public class TimerFriteuse : MonoBehaviour
     private float tempsRestant;
     private bool enCuisson = false;
     public int nivmachine;
+    public AudioSource audioSource; // Ajoute ceci
+    public AudioClip sonFin; // Ajoute ceci
     // public GameObject UPMACHINE;
 
     void Start()
@@ -37,6 +40,11 @@ public class TimerFriteuse : MonoBehaviour
                 timerText.gameObject.SetActive(false);
                 messafterfinish.gameObject.SetActive(true); 
                 nourriture.gameObject.SetActive(true);
+                
+                if (audioSource != null && sonFin != null)
+                {
+                    audioSource.PlayOneShot(sonFin);
+                }
             }
         }
     }
